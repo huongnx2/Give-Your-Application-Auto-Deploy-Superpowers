@@ -76,7 +76,7 @@ jobs:
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
-      notify_status_on_fail
+      - notify_status_on_fail
 
   test-frontend:
     docker:
