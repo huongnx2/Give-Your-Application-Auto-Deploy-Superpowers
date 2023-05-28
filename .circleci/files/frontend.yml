@@ -1,19 +1,9 @@
-Description: >
-  UdaPeople frontend stack.
-
-Parameters:
-  ID:
-    Description: Unique identifier.
-    Type: String
-
 Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub "udapeople-${ID}"
-      OwnershipControls:
-        Rules:
-          - ObjectOwnership: ObjectWriter
+      AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
         ErrorDocument: 404.html
