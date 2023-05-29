@@ -372,7 +372,7 @@ workflows:
             - scan-backend
             - scan-frontend
       - deploy-infrastructure:
-          requires: [test-frontend, test-backen, scan-backend, scan-frontend]
+          requires: [test-frontend, test-backend, scan-backend, scan-frontend]
           filters:
             branches:
               only: [main]
