@@ -11,7 +11,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub "udapeople-${ID}"
-      PublicAccessBlockConfiguration:
+      PublicAccessBlockConfiguration: # Since 25.04.2023 Amazon changed default settings for newly created buckets, so that i have to change to this to create bucket
         BlockPublicAcls: false
       OwnershipControls:
         Rules:
