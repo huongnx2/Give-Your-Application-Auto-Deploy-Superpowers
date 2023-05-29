@@ -240,7 +240,7 @@ jobs:
             cd backend
             rm -rf node_modules/
             npm cache clear --force
-            del “package-lock.json"
+            rm -f package-lock.json
             npm install
             npm run migrations > migrations_output.txt
       - run:
