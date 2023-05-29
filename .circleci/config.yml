@@ -146,6 +146,7 @@ jobs:
             cd frontend
             npm install
             npm audit fix --audit-level=critical --force
+            npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
       - notify_status_on_fail
 
@@ -161,6 +162,7 @@ jobs:
           command: |
             cd backend
             npm install
+            npm audit fix --audit-level=critical --force
             npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
       - notify_status_on_fail
