@@ -230,7 +230,7 @@ jobs:
 
   run-migrations:
     docker:
-      - image: cimg/node:13.8.0
+      - image: circleci/node:13.8.0
     steps:
       - checkout
       - install_awscli
@@ -238,12 +238,9 @@ jobs:
           name: Run migrations
           command: |
             cd backend
-            rm -rf node_modules/
-            npm cache clear --force
-            rm -f package-lock.json
+            npm cache clean --force
             npm install
-            npm audit fix --force
-            npm run migrations-win > migrations_output.txt
+            npm run migrations > migrations_output.txt
       - run:
           name: Send migration results to kvdb
           command: |
