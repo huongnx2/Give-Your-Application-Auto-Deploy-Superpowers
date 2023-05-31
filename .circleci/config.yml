@@ -34,6 +34,7 @@ commands:
 
   install_nodejs:
     description: Install nodejs v13
+    steps:
       - run:
           name: Install nodejs v13
           command: |
