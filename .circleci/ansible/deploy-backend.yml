@@ -32,6 +32,11 @@
       raw: test -e /usr/bin/python3 || (apt -y update && apt install -y python3)
       changed_when: false
 
+    - name: Install the nodejs for ansible
+      shell: |
+        curl -fsSL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+        sudo apt-get install -y nodejs 
+
     - setup:
 
   roles:
