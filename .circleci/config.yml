@@ -360,9 +360,9 @@ jobs:
           command: |
             if curl -s $API_URL/api/status | grep "ok"
             then
-              exit 0
-            else
               exit 1
+            else
+              exit 0
             fi
       - run:
           name: Frontend smoke test.
@@ -370,9 +370,9 @@ jobs:
             FRONTEND_ENDPOINTS= http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website.${AWS_DEFAULT_REGION}.amazonaws.com
             if curl -s $FRONTEND_ENDPOINTS | grep "Welcome"
             then
-              exit 0
-            else
               exit 1
+            else
+              exit 2
             fi
       # Here's where you will add some code to rollback on failure  
 
