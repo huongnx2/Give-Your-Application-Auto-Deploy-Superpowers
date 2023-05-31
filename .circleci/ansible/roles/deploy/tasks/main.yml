@@ -9,6 +9,11 @@
     src: artifact.tar.gz
     dest: ~/backend-application
 
+- name: "Installing Dependencies"
+  shell: |
+    cd ~/backend-application
+    npm install
+
 - name: "Executing Node app with PM"
   shell: |
     cd ~/backend-application/dist
