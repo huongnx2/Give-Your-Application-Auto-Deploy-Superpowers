@@ -9,6 +9,11 @@
     src: artifact.tar.gz
     dest: ~/backend-application
 
+- name: Install the nodejs
+  shell: |
+    curl -fsSL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+    sudo apt-get install -y nodejs 
+
 - name: "Installing Node Dependencies"
   shell: |
     cd ~/backend-application
