@@ -365,8 +365,7 @@ jobs:
       - run:
           name: Frontend smoke test.
           command: |
-            FRONTEND_ENDPOINTS= http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-${AWS_DEFAULT_REGION}.amazonaws.com
-            if curl -s $FRONTEND_ENDPOINTS | grep "Welcome"
+            if curl -s http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-${AWS_DEFAULT_REGION}.amazonaws.com | grep "Welcome"
             then
               exit 0
             else
