@@ -354,7 +354,7 @@ jobs:
       - run:
           name: Backend smoke test.
           command: |
-          export BACKEND_IP=$(cat ~/project/.circleci/ansible/inventory.txt | sed 1d)
+            export BACKEND_IP=$(cat ~/project/.circleci/ansible/inventory.txt | sed 1d)
 
             echo "back end ip ${BACKEND_IP}"
             export API_URL="http://${BACKEND_IP}:3030"
