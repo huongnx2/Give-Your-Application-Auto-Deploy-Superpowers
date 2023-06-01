@@ -12,6 +12,7 @@
   environment:
     NODE_ENV: production
     VERSION: "1"
+    ENVIRONMENT: "production"
     TYPEORM_CONNECTION: "{{lookup('env', 'TYPEORM_CONNECTION')}}"
     TYPEORM_MIGRATIONS_DIR: "{{lookup('env', 'TYPEORM_MIGRATIONS_DIR')}}"
     TYPEORM_PASSWORD: "{{lookup('env', 'TYPEORM_PASSWORD')}}"
