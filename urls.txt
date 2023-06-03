@@ -1,0 +1,2 @@
+Github repo (URL1): https://github.com/huongnx2/Give-Your-Application-Auto-Deploy-Superpowers
+S3 Bucket (URL2): 
