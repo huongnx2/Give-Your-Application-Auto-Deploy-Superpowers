@@ -334,13 +334,14 @@ jobs:
       - run:
           name: Deploy backend
           command: |
-            export TYPEORM_MIGRATION_DIR=${TYPEORM_MIGRATIONS_DIR}
-            export TYPEORM_ENTITIES=${TYPEORM_ENTITIES}
-            export TYPEORM_MIGRATIONS=${TYPEORM_MIGRATIONS}
+            export TYPEORM_MIGRATION_DIR=./migrations
+            export TYPEORM_ENTITIES=./modules/domain/**/*.entity{.ts,.js}
+            export TYPEORM_MIGRATIONS=./migrations/*.ts
 
-            echo TYPEORM_MIGRATION_DIR ${TYPEORM_MIGRATIONS_DIR}
-            echo TYPEORM_ENTITIES ${TYPEORM_ENTITIES}
-            echo TYPEORM_MIGRATIONS ${TYPEORM_MIGRATIONS}
+            echo TYPEORM_MIGRATION_DIR "${TYPEORM_MIGRATIONS_DIR}""
+            echo TYPEORM_ENTITIES "${TYPEORM_ENTITIES}""
+            echo TYPEORM_MIGRATIONS "${TYPEORM_MIGRATIONS}""
+
             cd .circleci/ansible
             cat inventory.txt
             ansible-playbook -i inventory.txt deploy-backend.yml
