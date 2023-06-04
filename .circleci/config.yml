@@ -327,7 +327,6 @@ jobs:
             cd backend
             npm run build
             tar -czf artifact.tar.gz dist/* package*
-
             cd ..
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
       
@@ -369,7 +368,7 @@ jobs:
             echo "${API_URL}"
             if curl -s ${API_URL}/api/status | grep "ok"
             then
-              exit 1
+              exit 0
             else
               exit 1
             fi
